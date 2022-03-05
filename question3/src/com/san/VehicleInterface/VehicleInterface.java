@@ -5,6 +5,6 @@ public interface VehicleInterface {
     public String getBrand();
     public String getColor();
     public int getYear();
-    public float getMileage();
+    public double getMileage();
     
 }

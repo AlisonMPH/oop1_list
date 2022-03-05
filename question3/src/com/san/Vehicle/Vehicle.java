@@ -7,9 +7,9 @@ public abstract class Vehicle implements VehicleInterface{
     protected String brand;
     protected String color;
     protected int year;
-    protected float mileage;
+    protected double mileage;
 
-    public Vehicle (String name, String brand, String color, int year, float mileage) {
+    public Vehicle (String name, String brand, String color, int year, double mileage) {
         this.name = name;
         this.brand = brand;
         this.color = color;
@@ -33,7 +33,7 @@ public abstract class Vehicle implements VehicleInterface{
         return this.year;
     }
 
-    public float getMileage() {
+    public double getMileage() {
         return this.mileage;
     }
 

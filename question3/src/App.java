@@ -1,6 +1,6 @@
 import com.san.Bike.Bike;
-import com.san.Sedan.Sedan;
 import com.san.Vehicle.Vehicle;
+import com.san.carModels.Sedan.Sedan;
 
 public class App {
     public static void main(String[] args) throws Exception {

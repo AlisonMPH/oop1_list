@@ -1,4 +1,4 @@
-package com.san.Sedan;
+package com.san.carModels.Sedan;
 
 import com.san.Car.Car;
 
@@ -11,9 +11,8 @@ public class Sedan extends Car {
         int year, 
         float mileage,
         double trunkSize
-        ) {
-            super (name, brand,color, year, mileage, trunkSize);
-            this.numberOfDoors = 4;
+    ) {
+        super (name, brand,color, year, mileage, trunkSize);
+        this.numberOfDoors = 4;
     }
-    
 }
