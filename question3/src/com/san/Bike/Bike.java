@@ -13,6 +13,4 @@ public class Bike extends Vehicle {
     ) {
         super(name, brand, color, year, mileage);
     }
-
-
 }

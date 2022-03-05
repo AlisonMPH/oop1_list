@@ -7,7 +7,7 @@ public abstract class Car extends Vehicle  {
     protected double trunkSize;
     protected float trunkBedSize;
     
-    public Car(
+    public Car (
         String name, 
         String brand, 
         String color, 
@@ -29,7 +29,6 @@ public abstract class Car extends Vehicle  {
     ) {
         super (name, brand, color, year, mileage);
         this.trunkBedSize = trunkBedSize;
-
     }
 
     public short getNumberOfDoors() {
