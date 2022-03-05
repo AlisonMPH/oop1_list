@@ -14,5 +14,4 @@ public class SUV extends Car {
     ) {
         super(name, brand, color, year, mileage, trunkSize);
     }
-    
 }
