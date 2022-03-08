@@ -9,7 +9,7 @@ public class Truck extends Car {
         String brand, 
         String color, 
         int year, 
-        float mileage,
+        double mileage,
         float trunkBedSize,
         short numberOfDoors
     ) {

@@ -2,7 +2,7 @@ package com.san.Menu;
 
 import java.util.Scanner;
 
-public class SellVehicleMenu {
+public abstract class SellVehicleMenu {
     protected static void show() {
         Scanner scan = new Scanner(System.in);
         byte option;
@@ -63,17 +63,40 @@ public class SellVehicleMenu {
             if (mileageVehicle == 0) break;
             
             if (option == 2) {
+                ClearScreenMenu.clearScreen();
+                System.out.format("%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
+                System.out.println("\tTrunkSize of Vehicle: ");
+                System.out.println("\n\t[0] - Cancel");
+                System.out.format("\n%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
+                System.out.print("Enter TrunkSize: ");
+                double trunkSize = scan.nextDouble();
+                if (trunkSize == 0) break;
+
                 CarModelsMenu.show();
                 byte optionCarModel = scan.nextByte();
+                short numberOfDoors = 0;
+                if (optionCarModel == 4) {
+                    ClearScreenMenu.clearScreen();
+                    System.out.format("%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
+                    System.out.println("\tNumbers of Doors: ");
+                    System.out.println("\n\t[0] - Cancel");
+                    System.out.format("\n%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
+                    System.out.print("Enter Number: ");
+                    numberOfDoors = scan.nextShort();
+                    if (trunkSize == 0) break;
+                }
                 ProcessCarModelMenu.process (
                     optionCarModel, 
                     nameVehicle, 
                     brandVehicle, 
                     colorVehicle, 
                     yearVehicle, 
-                    mileageVehicle
+                    mileageVehicle, 
+                    trunkSize,
+                    numberOfDoors
                 );
             }
+
             else {
                 ProcessBikeMenu.process (
                     nameVehicle, 

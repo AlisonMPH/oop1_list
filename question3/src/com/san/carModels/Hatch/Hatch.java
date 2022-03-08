@@ -9,7 +9,7 @@ public class Hatch extends Car {
         String brand, 
         String color, 
         int year, 
-        float mileage,
+        double mileage,
         double trunkSize
     ) {
         super (name, brand,color, year, mileage, trunkSize);

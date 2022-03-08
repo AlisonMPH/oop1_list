@@ -9,7 +9,7 @@ public class Bike extends Vehicle {
         String brand, 
         String color, 
         int year, 
-        float mileage
+        double mileage
     ) {
         super(name, brand, color, year, mileage);
     }
