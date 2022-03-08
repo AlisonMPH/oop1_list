@@ -43,7 +43,7 @@ public abstract class SellVehicleMenu {
                         if (optionCarModel == 4) 
                             numberOfDoors = NumberOfDoorsVehicleMenu.input(scan);
                         
-                        ProcessCarModelMenu.process (
+                        ProcessCarModel.process (
                             optionCarModel, 
                             nameVehicle, 
                             brandVehicle, 
@@ -58,7 +58,7 @@ public abstract class SellVehicleMenu {
                 }
             }
             else {
-                ProcessBikeMenu.process (
+                ProcessBike.process (
                     nameVehicle, 
                     brandVehicle, 
                     colorVehicle, 

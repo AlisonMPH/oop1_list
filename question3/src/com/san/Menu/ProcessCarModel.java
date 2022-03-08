@@ -6,7 +6,7 @@ import com.san.carModels.SUV.SUV;
 import com.san.carModels.Sedan.Sedan;
 import com.san.carModels.Truck.Truck;
 
-public abstract class ProcessCarModelMenu {
+public abstract class ProcessCarModel {
 
     protected static void process (
         byte optionCarModel, 
