@@ -2,7 +2,7 @@ package com.san.Menu;
 
 import java.util.Scanner;
 
-public class MileageVehicleMenu {
+public abstract class MileageVehicleMenu {
     protected static double input(Scanner scan) {
         ClearScreenMenu.clearScreen();
         System.out.format("%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));

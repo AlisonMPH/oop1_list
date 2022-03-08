@@ -2,7 +2,7 @@ package com.san.Menu;
 
 import java.util.Scanner;
 
-public class YearVehicleMenu {
+public abstract class YearVehicleMenu {
     protected static int input(Scanner scan) {
         ClearScreenMenu.clearScreen();
         System.out.format("%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));

@@ -1,6 +1,6 @@
 package com.san.Menu;
 
-public class ProcessBikeMenu {
+public abstract class ProcessBikeMenu {
     protected static void process (
         String nameVehicle, 
         String brandVehicle, 
