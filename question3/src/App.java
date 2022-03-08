@@ -11,7 +11,7 @@ public class App {
             ShowMenu.show();
             System.out.print("\nEnter your option: ");
             option = scan.nextByte();
-            ProcessMenu.process(option);
+            ProcessMenu.process(scan, option);
         } while (option != 0);
         scan.close();
     }

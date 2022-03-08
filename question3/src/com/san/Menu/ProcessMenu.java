@@ -1,13 +1,15 @@
 package com.san.Menu;
 
+import java.util.Scanner;
+
 public abstract class ProcessMenu {
-    public static void process(byte option) {
+    public static void process(Scanner scan, byte option) {
         switch (option) {
             case 1:
                 BuyVehicleMenu.show();
                 break;
             case 2:
-                SellVehicleMenu.show();
+                SellVehicleMenu.show(scan);
                 break;
             case 0:
                 ExitProgramMenu.show();

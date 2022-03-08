@@ -3,100 +3,60 @@ package com.san.Menu;
 import java.util.Scanner;
 
 public abstract class SellVehicleMenu {
-    protected static void show() {
-        Scanner scan = new Scanner(System.in);
+    protected static void show(Scanner scan) {
         byte option;
         do {
-            ClearScreenMenu.clearScreen();
-            System.out.format("%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
-            System.out.println("\tIs Bike or Car?\n");
-            System.out.println("[1] - Bike\t[2] - Car\t[0] - Cancel");
-            System.out.format("\n%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
-            System.out.print("Enter your option: ");
-            option = scan.nextByte();
+            option = VehicleTypeMenu.input(scan);
             if (option == 0) break;
 
-            ClearScreenMenu.clearScreen();
-            System.out.format("%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
-            System.out.println("\tName of Vehicle: ");
-            System.out.println("\n\t[0] - Cancel");
-            System.out.format("\n%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
-            System.out.print("Enter Name: ");
-            scan.nextLine();
-            String nameVehicle = scan.nextLine();
+            String nameVehicle = NameVehicleMenu.input(scan);
             if(nameVehicle.equals("0")) break;
 
-            ClearScreenMenu.clearScreen();
-            System.out.format("%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
-            System.out.println("\tBrand of Vehicle: ");
-            System.out.println("\n\t[0] - Cancel");
-            System.out.format("\n%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
-            System.out.print("Enter Brand: ");
-            String brandVehicle = scan.nextLine();
+            String brandVehicle = BrandVehicleMenu.input(scan);
             if (brandVehicle.equals("0")) break;
 
-            ClearScreenMenu.clearScreen();
-            System.out.format("%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
-            System.out.println("\tColor of Vehicle: ");
-            System.out.println("\n\t[0] - Cancel");
-            System.out.format("\n%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
-            System.out.print("Enter Color: ");
-            String colorVehicle = scan.nextLine();
+            String colorVehicle = ColorVehicleMenu.input(scan);
             if (colorVehicle.equals("0")) break;
 
-            ClearScreenMenu.clearScreen();
-            System.out.format("%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
-            System.out.println("\tYear of Vehicle: ");
-            System.out.println("\n\t[0] - Cancel");
-            System.out.format("\n%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
-            System.out.print("Enter Year: ");
-            int yearVehicle = scan.nextInt();
+            int yearVehicle = YearVehicleMenu.input(scan);
             if (yearVehicle == 0) break;
 
-            ClearScreenMenu.clearScreen();
-            System.out.format("%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
-            System.out.println("\tMileage of Vehicle: ");
-            System.out.println("\n\t[0] - Cancel");
-            System.out.format("\n%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
-            System.out.print("Enter Mileage: ");
-            double mileageVehicle = scan.nextDouble();
+            double mileageVehicle = MileageVehicleMenu.input(scan);
             if (mileageVehicle == 0) break;
             
             if (option == 2) {
-                ClearScreenMenu.clearScreen();
-                System.out.format("%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
-                System.out.println("\tTrunkSize of Vehicle: ");
-                System.out.println("\n\t[0] - Cancel");
-                System.out.format("\n%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
-                System.out.print("Enter TrunkSize: ");
-                double trunkSize = scan.nextDouble();
+                double trunkSize = TrunkSizeVehicleMenu.input(scan);
                 if (trunkSize == 0) break;
 
-                CarModelsMenu.show();
-                byte optionCarModel = scan.nextByte();
+                byte optionCarModel;
                 short numberOfDoors = 0;
-                if (optionCarModel == 4) {
-                    ClearScreenMenu.clearScreen();
-                    System.out.format("%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
-                    System.out.println("\tNumbers of Doors: ");
-                    System.out.println("\n\t[0] - Cancel");
-                    System.out.format("\n%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
-                    System.out.print("Enter Number: ");
-                    numberOfDoors = scan.nextShort();
-                    if (trunkSize == 0) break;
+                while (true) {
+                    CarModelsMenu.show();
+                    optionCarModel = scan.nextByte();
+                    
+                    if (optionCarModel == 0) break;
+                    
+                    else if (optionCarModel > 4 || optionCarModel < 0) {
+                        InvalidOptionMenu.show();
+                    }
+                    else {
+                        if (optionCarModel == 4) 
+                            numberOfDoors = NumberOfDoorsVehicleMenu.input(scan);
+                        
+                        ProcessCarModelMenu.process (
+                            optionCarModel, 
+                            nameVehicle, 
+                            brandVehicle, 
+                            colorVehicle, 
+                            yearVehicle, 
+                            mileageVehicle, 
+                            trunkSize,
+                            numberOfDoors
+                        );
+                        break;
+                    }
                 }
-                ProcessCarModelMenu.process (
-                    optionCarModel, 
-                    nameVehicle, 
-                    brandVehicle, 
-                    colorVehicle, 
-                    yearVehicle, 
-                    mileageVehicle, 
-                    trunkSize,
-                    numberOfDoors
-                );
             }
-
             else {
                 ProcessBikeMenu.process (
                     nameVehicle, 
@@ -106,9 +66,7 @@ public abstract class SellVehicleMenu {
                     mileageVehicle
                 );
             }
-            
             break;
         } while (true);
-        scan.close();
     }
 }

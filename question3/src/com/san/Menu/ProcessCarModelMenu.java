@@ -1,11 +1,13 @@
 package com.san.Menu;
 
+import com.san.SalesList.SalesList;
 import  com.san.carModels.Hatch.Hatch;
 import com.san.carModels.SUV.SUV;
 import com.san.carModels.Sedan.Sedan;
 import com.san.carModels.Truck.Truck;
 
 public abstract class ProcessCarModelMenu {
+
     protected static void process (
         byte optionCarModel, 
         String nameVehicle, 
@@ -26,6 +28,7 @@ public abstract class ProcessCarModelMenu {
                     mileageVehicle,
                     trunkSize
                 );
+                SalesList.add(hatch);
                 break;
             
             case 2:
@@ -37,6 +40,7 @@ public abstract class ProcessCarModelMenu {
                     mileageVehicle,
                     trunkSize
                 );
+                SalesList.add(sedan);
                 break;
             
             case 3:
@@ -48,6 +52,7 @@ public abstract class ProcessCarModelMenu {
                     mileageVehicle,
                     trunkSize
                 );
+                SalesList.add(suv);
                 break;
             
             case 4:
@@ -60,6 +65,7 @@ public abstract class ProcessCarModelMenu {
                     (float) trunkSize,
                     numberOfDoors
                 );
+                SalesList.add(truck);
                 break;
             
             default:
