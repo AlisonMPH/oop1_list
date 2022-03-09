@@ -39,4 +39,8 @@ public abstract class SalesList {
     public static LinkedList<Vehicle> getSalesList() {
         return salesList;
     }
+
+    public static Vehicle getVehicle(int index) {
+        return salesList.get(index - 1);
+    }
 }

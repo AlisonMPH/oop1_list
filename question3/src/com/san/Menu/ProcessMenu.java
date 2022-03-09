@@ -9,6 +9,9 @@ public abstract class ProcessMenu {
                 VehiclesForSaleMenu.show();
                 break;
             case 2:
+                RegisterSalesMenu.show(scan);
+                break;
+            case 3:
                 SellVehicleMenu.show(scan);
                 break;
             case 0:
