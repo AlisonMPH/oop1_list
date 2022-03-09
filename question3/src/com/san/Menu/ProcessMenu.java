@@ -6,7 +6,7 @@ public abstract class ProcessMenu {
     public static void process(Scanner scan, byte option) {
         switch (option) {
             case 1:
-                BuyVehicleMenu.show();
+                VehiclesForSale.show();
                 break;
             case 2:
                 SellVehicleMenu.show(scan);
