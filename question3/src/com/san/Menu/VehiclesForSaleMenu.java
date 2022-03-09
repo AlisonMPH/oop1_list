@@ -3,13 +3,14 @@ package com.san.Menu;
 import java.io.IOException;
 import java.util.LinkedList;
 
+import com.san.Bike.Bike;
 import com.san.Car.Car;
 import com.san.SalesList.SalesList;
 import com.san.Vehicle.Vehicle;
 
-public abstract class VehiclesForSale {
+public abstract class VehiclesForSaleMenu {
     protected static void show() {
-        int QUANTITY_OF_CHARACTERS_LIST = 95;
+        int QUANTITY_OF_CHARACTERS_LIST = 104;
         ClearScreenMenu.clearScreen();
         System.out.format("%s\n", "-".repeat(QUANTITY_OF_CHARACTERS_LIST));
         System.out.printf("| %-3s|", "ID");
@@ -20,6 +21,7 @@ public abstract class VehiclesForSale {
         System.out.printf(" %-10s|", "Mileage");
         System.out.printf(" %-12s|", "Trunk Size");
         System.out.printf(" %-6s|", "Doors");
+        System.out.printf(" %-7s|", "Engine");
         System.out.printf(" %-10s|", "Price");
         System.out.format("\n%s\n", "-".repeat(QUANTITY_OF_CHARACTERS_LIST));
 
@@ -34,10 +36,12 @@ public abstract class VehiclesForSale {
             if (vehicle instanceof Car) {
                 System.out.printf(" %-14.2f", ((Car) vehicle).getTrunkSize());
                 System.out.printf("%-8d", ((Car) vehicle).getNumberOfDoors());
+                System.out.printf("%-9s", "N/A");
             }
             else {
                 System.out.printf(" %-14s", "N/A");
                 System.out.printf("%-8s", "N/A");
+                System.out.printf("%-9d", ((Bike) vehicle).getEngineCapacity());
             }
             System.out.printf("%-9.2f", vehicle.getPrice());
             System.out.println();

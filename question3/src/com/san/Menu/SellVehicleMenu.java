@@ -70,6 +70,8 @@ public abstract class SellVehicleMenu {
                 }
             }
             else {
+                int engineCapacity = EngineCapacityMenu.input(scan);
+                if (engineCapacity == 0) break;
                 ProcessBike.process (
                     nameVehicle, 
                     brandVehicle, 
@@ -78,7 +80,8 @@ public abstract class SellVehicleMenu {
                     mileageVehicle,
                     licensePlate,
                     ownersName,
-                    price
+                    price,
+                    engineCapacity
                 );
             }
             break;
