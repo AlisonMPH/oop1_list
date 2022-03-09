@@ -10,8 +10,11 @@ public class SUV extends Car {
         String color, 
         int year, 
         double mileage, 
-        double trunkSize
+        double trunkSize,
+        String licensePlate,
+        String ownersName,
+        double price
     ) {
-        super(name, brand, color, year, mileage, trunkSize);
+        super(name, brand, color, year, mileage, trunkSize, licensePlate, ownersName, price);
     }
 }

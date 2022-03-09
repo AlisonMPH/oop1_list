@@ -8,13 +8,28 @@ public abstract class Vehicle implements VehicleInterface{
     protected String color;
     protected int year;
     protected double mileage;
+    private String licensePlate;
+    private String ownersName;
+    private double price;
 
-    public Vehicle (String name, String brand, String color, int year, double mileage) {
+    public Vehicle (
+        String name, 
+        String brand, 
+        String color, 
+        int year, 
+        double mileage, 
+        String licensePlate,
+        String ownersName,
+        double price
+    ) {
         this.name = name;
         this.brand = brand;
         this.color = color;
         this.year = year;
         this.mileage = mileage;
+        this.licensePlate = licensePlate;
+        this.ownersName = ownersName;
+        this.price = price;
     }
 
     public String getName() {
@@ -35,6 +50,18 @@ public abstract class Vehicle implements VehicleInterface{
 
     public double getMileage() {
         return this.mileage;
+    }
+
+    public String getLicensePlate() {
+        return this.licensePlate;
+    }
+
+    public String getOwnersName() {
+        return this.ownersName;
+    }
+
+    public double getPrice() {
+        return this.price;
     }
 
 }

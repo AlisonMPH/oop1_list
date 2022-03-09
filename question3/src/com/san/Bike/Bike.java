@@ -9,8 +9,11 @@ public class Bike extends Vehicle {
         String brand, 
         String color, 
         int year, 
-        double mileage
+        double mileage,
+        String licensePlate,
+        String ownersName,
+        double price
     ) {
-        super(name, brand, color, year, mileage);
+        super(name, brand, color, year, mileage, licensePlate, ownersName, price);
     }
 }

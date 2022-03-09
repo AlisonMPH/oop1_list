@@ -11,9 +11,12 @@ public class Truck extends Car {
         int year, 
         double mileage,
         float trunkBedSize,
-        short numberOfDoors
+        short numberOfDoors,
+        String licensePlate,
+        String ownersName,
+        double price
     ) {
-        super (name, brand,color, year, mileage, trunkBedSize);
+        super (name, brand,color, year, mileage, trunkBedSize, licensePlate, ownersName, price);
         this.numberOfDoors = numberOfDoors;
     }
 

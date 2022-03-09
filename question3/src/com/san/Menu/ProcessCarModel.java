@@ -16,7 +16,10 @@ public abstract class ProcessCarModel {
         int yearVehicle, 
         double mileageVehicle,
         double trunkSize,
-        short numberOfDoors
+        short numberOfDoors,
+        String licensePlate,
+        String ownersName,
+        double price
     ) {
         switch (optionCarModel) {
             case 1:
@@ -26,7 +29,10 @@ public abstract class ProcessCarModel {
                     colorVehicle, 
                     yearVehicle, 
                     mileageVehicle,
-                    trunkSize
+                    trunkSize,
+                    licensePlate,
+                    ownersName,
+                    price
                 );
                 SalesList.add(hatch);
                 break;
@@ -38,7 +44,10 @@ public abstract class ProcessCarModel {
                     colorVehicle, 
                     yearVehicle, 
                     mileageVehicle,
-                    trunkSize
+                    trunkSize,
+                    licensePlate,
+                    ownersName,
+                    price
                 );
                 SalesList.add(sedan);
                 break;
@@ -50,7 +59,10 @@ public abstract class ProcessCarModel {
                     colorVehicle, 
                     yearVehicle, 
                     mileageVehicle,
-                    trunkSize
+                    trunkSize,
+                    licensePlate,
+                    ownersName,
+                    price
                 );
                 SalesList.add(suv);
                 break;
@@ -63,7 +75,10 @@ public abstract class ProcessCarModel {
                     yearVehicle, 
                     mileageVehicle,
                     (float) trunkSize,
-                    numberOfDoors
+                    numberOfDoors,
+                    licensePlate,
+                    ownersName,
+                    price
                 );
                 SalesList.add(truck);
                 break;

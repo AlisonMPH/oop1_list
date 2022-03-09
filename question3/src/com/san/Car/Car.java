@@ -13,9 +13,12 @@ public abstract class Car extends Vehicle  {
         String color, 
         int year,
         double mileage, 
-        double trunkSize
+        double trunkSize,
+        String licensePlate,
+        String ownersName,
+        double price
     ) {
-        super (name, brand, color, year, mileage);
+        super (name, brand, color, year, mileage, licensePlate, ownersName, price);
         this.trunkSize = trunkSize;
     }
 
@@ -25,9 +28,12 @@ public abstract class Car extends Vehicle  {
         String color, 
         int year, 
         double mileage,
-        float trunkBedSize
+        float trunkBedSize,
+        String licensePlate,
+        String ownersName,
+        double price
     ) {
-        super (name, brand, color, year, mileage);
+        super (name, brand, color, year, mileage, licensePlate, ownersName, price);
         this.trunkBedSize = trunkBedSize;
     }
 

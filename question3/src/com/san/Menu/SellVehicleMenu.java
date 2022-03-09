@@ -23,6 +23,15 @@ public abstract class SellVehicleMenu {
 
             double mileageVehicle = MileageVehicleMenu.input(scan);
             if (mileageVehicle == 0) break;
+
+            String licensePlate = LicensePlateMenuVehicle.input(scan);
+            if (licensePlate.equals("0")) break;
+
+            String ownersName = OwnersNameVehicleMenu.input(scan);
+            if (ownersName.equals("0")) break;
+
+            double price = PriceVehicleMenu.input(scan);
+            if (price == 0) break;
             
             if (option == 2) {
                 double trunkSize = TrunkSizeVehicleMenu.input(scan);
@@ -51,7 +60,10 @@ public abstract class SellVehicleMenu {
                             yearVehicle, 
                             mileageVehicle, 
                             trunkSize,
-                            numberOfDoors
+                            numberOfDoors,
+                            licensePlate,
+                            ownersName,
+                            price
                         );
                         break;
                     }
@@ -63,7 +75,10 @@ public abstract class SellVehicleMenu {
                     brandVehicle, 
                     colorVehicle, 
                     yearVehicle, 
-                    mileageVehicle
+                    mileageVehicle,
+                    licensePlate,
+                    ownersName,
+                    price
                 );
             }
             break;

@@ -9,7 +9,10 @@ public abstract class ProcessBike {
         String brandVehicle, 
         String colorVehicle, 
         int yearVehicle, 
-        double mileageVehicle
+        double mileageVehicle,
+        String licensePlateVehicle,
+        String ownersNameVehicle,
+        double priceVehicle
     ) {
         SalesList.add(
             new Bike(
@@ -17,7 +20,10 @@ public abstract class ProcessBike {
                 brandVehicle, 
                 colorVehicle, 
                 yearVehicle, 
-                mileageVehicle
+                mileageVehicle,
+                licensePlateVehicle,
+                ownersNameVehicle,
+                priceVehicle
             )
         );
     }
