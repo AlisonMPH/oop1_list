@@ -10,6 +10,7 @@ public abstract class BuyerNameMenu {
         System.out.println("\n\t[0] - Cancel");
         System.out.format("\n%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
         System.out.print("Enter Name: ");
+        scan.nextLine();
         String buyerName = scan.nextLine();      
         
         return buyerName;

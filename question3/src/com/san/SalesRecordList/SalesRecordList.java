@@ -12,4 +12,8 @@ public abstract class SalesRecordList {
         SaleRecord saleRecord = new SaleRecord(vehicle, buyerName, paymentType);
         salesRecordList.add(saleRecord);
     }
+
+    public static LinkedList<SaleRecord> getSalesRecordList() {
+        return salesRecordList;
+    }
 }

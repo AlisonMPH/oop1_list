@@ -10,7 +10,15 @@ public abstract class RegisterSalesMenu {
     protected static void show(Scanner scan) {
         while (true) {
             int indexVehicle = IndexVehicleMenu.input(scan);
-            Vehicle vehicle = SalesList.getVehicle(indexVehicle);
+
+            Vehicle vehicle = null;
+            try {
+                vehicle = SalesList.getVehicle(indexVehicle);
+            }
+            catch (IndexOutOfBoundsException e) {
+                InvalidOptionMenu.show();
+                break;
+            }
             if (vehicle == null) {
                 InvalidOptionMenu.show();
                 break;
@@ -21,7 +29,7 @@ public abstract class RegisterSalesMenu {
 
             byte paymentTypeOption;
             String paymentType = "N/A";
-            while (true) {
+            do {
                 paymentTypeOption = PaymentTypeMenu.input(scan);
                 
                 if (paymentTypeOption == 0) break;
@@ -31,10 +39,12 @@ public abstract class RegisterSalesMenu {
                 else {
                     InvalidOptionMenu.show();
                 }
-            }
+            } while (paymentTypeOption < 0 || paymentTypeOption > 3);
             if (paymentTypeOption == 0) break;
 
             SalesRecordList.add(vehicle, buyerName, paymentType);
+            SalesList.remove(indexVehicle);
+            break;
         }
         
     }

@@ -28,8 +28,8 @@ public abstract class VehiclesForSaleMenu {
         LinkedList<Vehicle> salesList = SalesList.getSalesList();
         for (Vehicle vehicle : salesList) {
             System.out.printf(" %-5d", salesList.indexOf(vehicle) + 1);
-            System.out.printf(" %-11s", vehicle.getBrand());
             System.out.printf(" %-11s", vehicle.getName());
+            System.out.printf(" %-11s", vehicle.getBrand());
             System.out.printf(" %-11s", vehicle.getColor());
             System.out.printf(" %-6d", vehicle.getYear());
             System.out.printf(" %-11.2f", vehicle.getMileage());

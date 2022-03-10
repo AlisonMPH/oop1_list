@@ -14,6 +14,9 @@ public abstract class ProcessMenu {
             case 3:
                 SellVehicleMenu.show(scan);
                 break;
+            case 4:
+                RegistredSalesMenu.show();
+                break;
             case 0:
                 ExitProgramMenu.show();
                 break;
