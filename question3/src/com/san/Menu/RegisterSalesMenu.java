@@ -10,7 +10,7 @@ public abstract class RegisterSalesMenu {
     protected static void show(Scanner scan) {
         while (true) {
             int indexVehicle = IndexVehicleMenu.input(scan);
-
+            if (indexVehicle == 0) break;
             Vehicle vehicle = null;
             try {
                 vehicle = SalesList.getVehicle(indexVehicle);
