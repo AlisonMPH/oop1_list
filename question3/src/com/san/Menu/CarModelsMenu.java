@@ -8,6 +8,7 @@ public abstract class CarModelsMenu {
         System.out.println("\t2 - Sedan");
         System.out.println("\t3 - SUV");
         System.out.println("\t4 - Truck");
+        System.out.println("\t0 - Cancel");
         System.out.format("\n%s\n\n", "-".repeat(Menu.QUANTITY_OF_CHARACTERS));
         System.out.print("Enter your option: ");
     }
