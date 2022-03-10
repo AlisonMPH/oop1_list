@@ -2,6 +2,7 @@ package com.san.Menu;
 
 import java.util.Scanner;
 
+import com.san.FileList.FileList;
 import com.san.SalesList.SalesList;
 import com.san.SalesRecordList.SalesRecordList;
 import com.san.Vehicle.Vehicle;
@@ -44,6 +45,8 @@ public abstract class RegisterSalesMenu {
 
             SalesRecordList.add(vehicle, buyerName, paymentType);
             SalesList.remove(indexVehicle);
+            FileList.saveSalesList(SalesList.getSalesList());
+            FileList.saveSalesRecordList(SalesRecordList.getSalesRecordList());
             break;
         }
         

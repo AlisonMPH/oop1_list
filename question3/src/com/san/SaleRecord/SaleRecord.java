@@ -1,10 +1,11 @@
 package com.san.SaleRecord;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import com.san.Vehicle.Vehicle;
 
-public class SaleRecord {
+public class SaleRecord implements Serializable{
     private Vehicle vehicle;
     private String buyerName;
     private String paymentType;

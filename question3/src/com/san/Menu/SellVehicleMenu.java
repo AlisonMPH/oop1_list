@@ -2,6 +2,9 @@ package com.san.Menu;
 
 import java.util.Scanner;
 
+import com.san.FileList.FileList;
+import com.san.SalesList.SalesList;
+
 public abstract class SellVehicleMenu {
     protected static void show(Scanner scan) {
         byte option;
@@ -84,6 +87,7 @@ public abstract class SellVehicleMenu {
                     engineCapacity
                 );
             }
+            FileList.saveSalesList(SalesList.getSalesList());
             break;
         } while (true);
     }

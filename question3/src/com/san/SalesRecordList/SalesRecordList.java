@@ -16,4 +16,8 @@ public abstract class SalesRecordList {
     public static LinkedList<SaleRecord> getSalesRecordList() {
         return salesRecordList;
     }
+
+    public static void setSalesRecordList(LinkedList<SaleRecord> salesRecordList) {
+        SalesRecordList.salesRecordList = salesRecordList;
+    }
 }

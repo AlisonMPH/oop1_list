@@ -1,8 +1,10 @@
 package com.san.Vehicle;
 
+import java.io.Serializable;
+
 import com.san.VehicleInterface.VehicleInterface;
 
-public abstract class Vehicle implements VehicleInterface{
+public abstract class Vehicle implements VehicleInterface, Serializable{
     protected String name;
     protected String brand;
     protected String color;
